@@ -1,0 +1,32 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+<!-- Environment -->
+	<Script file="Env\\Debug.lua"/>
+	<Script file="Env\\Constants.lua"/>
+<!-- MAIN -->
+	<Script file="Locksmith.lua"/>
+
+	<Button name="LocksmithButton" inherits="SecureActionButtonTemplate" parent="UIParent" frameStrata="TOOLTIP" registerForClicks="LeftButtonUp, RightButtonUp" hidden="true">
+		<NormalTexture />
+		<Attributes>
+			<Attribute name="type" value="macro" />
+		</Attributes>
+		<Scripts>
+			<OnLeave>
+				SetCursor(nil)
+				self:Hide()
+			</OnLeave>
+			<OnEvent>
+				if event=="MODIFIER_STATE_CHANGED" then
+					local key,down=...
+					if down==0 and (key=="LALT" or key=="RALT") then
+						SetCursor(nil)
+						self:Hide()
+					end
+				end
+			</OnEvent>
+			<OnLoad>
+				self:RegisterEvent"MODIFIER_STATE_CHANGED"
+			</OnLoad>
+		</Scripts>
+	</Button>
+</Ui>
