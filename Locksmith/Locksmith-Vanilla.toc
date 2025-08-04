@@ -1,9 +1,8 @@
-## Interface: 11505
+## Interface: 11507
 ## Title: |cff00ff00Locksmith|r
 ## Notes: One click lock picker
 ## Author: Lotimar
 ## SavedVariables: LocksmithDB
-## Version: 1.0.2
+## Version: 1.0.4
 
 Locksmith.xml
-

@@ -61,9 +61,10 @@ end
 
 if select(3,UnitClass("player"))==4 then
 	GameTooltip:HookScript("OnTooltipSetItem", function(self)
+		if InCombatLockdown() then return end
 		local focusFrame
 		focusFrame = GetMouseFoci()[1]
-		if focusFrame:GetObjectType() ~= "Button" then return end
+		if not focusFrame or focusFrame:GetObjectType() ~= "Button" then return end
 		
 		if not IsAltKeyDown() then return end
 
