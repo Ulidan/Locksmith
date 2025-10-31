@@ -1,8 +1,8 @@
-## Interface: 50500
+## Interface: 11508, 50502
 ## Title: |cff00ff00Locksmith|r
 ## Notes: One click lock picker
 ## Author: Lotimar
 ## SavedVariables: LocksmithDB
-## Version: 1.0.4
+## Version: 1.0.5
 
 Locksmith.xml
